@@ -23,7 +23,11 @@ export const HeroSection = () => {
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
             For over 10 years, it has been my passion to deliver high quality software through rigorous testing and automation.
           </p>
-
+            <img
+              src="/images/me.jpg"
+              
+              class="w-60 h-60 rounded-full object-cover block mx-auto"
+            />
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
             <a href="#projects" className="cosmic-button">
               View My Work

@@ -8,6 +8,7 @@ const navItems = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
+  { name: "Resume", href: "https://drive.google.com/file/d/1Ttln3b5_RWDozxSC51wLPDfIU-_OkRGa/view?usp=sharing" },
 ];
 
 export const Navbar = () => {
@@ -41,17 +42,23 @@ export const Navbar = () => {
         </a>
 
         {/* desktop nav */}
-        <div className="hidden md:flex space-x-8">
-          {navItems.map((item, key) => (
-            <a
-              key={key}
-              href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
+<div className="hidden md:flex space-x-8">
+  {navItems.map((item, key) => (
+    <a
+      key={key}
+      href={item.href}
+      className={`transition-colors duration-300 ${
+        item.name === "Resume"
+          ? "text-sky-500 font-semibold hover:text-blue-800"
+          : "text-foreground/80 hover:text-primary"
+      }`}
+      target={item.name === "Resume" ? "_blank" : "_self"}
+      rel={item.name === "Resume" ? "noopener noreferrer" : undefined}
+    >
+      {item.name}
+    </a>
+  ))}
+</div>
 
         {/* mobile nav */}
 
