@@ -12,33 +12,31 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Results-driven Software QA Automation Engineer and Manager with over 10 years of experience in test automation throughout the software development lifecycle.
+              Software QA Automation Engineer and Manager with over 10 years of experience in test automation.
             </h3>
 
             <p className="text-muted-foreground">
-              Passionate leader, and mentor with a proven track record of building and leading high-performing teams.
-               I excel in fostering a culture of quality and continuous improvement, 
-               ensuring that software products meet the highest standards of excellence.
+              Passionate leader, and mentor with a proven 
+              track record of building and leading high-performing teams.
+              
             </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
+               I excel in fostering a culture of quality and continuous improvement, 
+               ensuring that software products meet the highest standards of excellence
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button">
                 {" "}
-                Get In Touch
+                Contact
               </a>
 
               <a
                 href=""
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
-                Download CV
+                Download Resume
               </a>
             </div>
           </div>
@@ -50,10 +48,10 @@ export const AboutSection = () => {
                   <Code className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Web Development</h4>
+                  <h4 className="font-semibold text-lg"> Test Automation</h4>
                   <p className="text-muted-foreground">
-                    Creating responsive websites and web applications with
-                    modern frameworks.
+                    Creating first in class test automation with
+                    modern frameworks such as Playwright, Cypress, and Appium.
                   </p>
                 </div>
               </div>
@@ -64,10 +62,9 @@ export const AboutSection = () => {
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
+                  <h4 className="font-semibold text-lg">People Management</h4>
                   <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
+                    I excel in people management. I pride myself on being a mentor and a leader that puts his team's career development first.
                   </p>
                 </div>
               </div>
@@ -79,10 +76,9 @@ export const AboutSection = () => {
                 </div>
 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
+                  <h4 className="font-semibold text-lg">Well Rounded</h4>
                   <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile
-                    methodologies.
+                    Quality is achieved by more than just testing, I am a certfieid scrum master (SCM) as well as a certified project manager (CSPO) which enables me to take a holistic approach to software quality.
                   </p>
                 </div>
               </div>

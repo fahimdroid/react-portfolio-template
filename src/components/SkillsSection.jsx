@@ -2,29 +2,30 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
-  // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+// Tools
+  { name: "Certified ScrumMaster (CSM)", level: 100, category: "certifications" },
+  { name: "Certified Scrum Product Owner® (CSPO)", level: 100, category: "certifications" },
+  { name: "WAI0.1x Accesibility", level: 100, category: "certifications" },
+  { name: "Certified SAFe® 6 Agilist", level: 100, category: "certifications" },
+  { name: "Certified Tester, ASTQB/ISTQB", level: 100, category: "certifications" },
+  // technologies
+  { name: "HTML/CSS", level: 95, category: "technologies" },
+  { name: "C#", level: 90, category: "technologies" },
+  { name: "React", level: 90, category: "technologies" },
+  { name: "TypeScript", level: 85, category: "technologies" },
+  { name: "Pytest", level: 90, category: "technologies" },
+  { name: "Cypress", level: 95, category: "technologies" },
+  { name: "Appium", level: 90, category: "technologies" },
+  { name: "Playwright", level: 90, category: "technologies" },
+  { name: "Node.js", level: 80, category: "technologies" },
+  { name: "SQL", level: 90, category: "technologies" },
+  { name: "Saucelabs", level: 70, category: "technologies" },
+  { name: "Firebase", level: 85, category: "technologies" },
 
-  // Backend
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
-
-  // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = ["all", "certifications", "technologies"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
