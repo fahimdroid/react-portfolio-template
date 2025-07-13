@@ -12,13 +12,13 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Web Developer & Tech Creator
+              Results-driven Software QA Automation Engineer and Manager with over 10 years of experience in test automation throughout the software development lifecycle.
             </h3>
 
             <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
+              Passionate leader, and mentor with a proven track record of building and leading high-performing teams.
+               I excel in fostering a culture of quality and continuous improvement, 
+               ensuring that software products meet the highest standards of excellence.
             </p>
 
             <p className="text-muted-foreground">
