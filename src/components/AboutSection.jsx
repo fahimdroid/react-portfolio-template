@@ -23,7 +23,7 @@ export const AboutSection = () => {
 
             <p className="text-muted-foreground">
                I excel in fostering a culture of quality and continuous improvement, 
-               ensuring that software products meet the highest standards of excellence
+               ensuring that software products meet the highest standards of excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
