@@ -42,6 +42,8 @@ export const ContactSection = () => {
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
+        titleProps: { 'data-testid': 'toast-title' },
+        
       });
 
       form.reset();
@@ -50,6 +52,8 @@ export const ContactSection = () => {
         title: "Error",
         description: "Something went wrong. Please try again later.",
         variant: "destructive",
+        titleProps: { 'data-testid': 'toast-title' },
+        
       });
     } finally {
       setIsSubmitting(false);
