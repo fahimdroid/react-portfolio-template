@@ -1,17 +1,14 @@
 import { test, expect } from '@playwright/test';
 
 const navItems = [
-  { label: 'Home', testId: 'nav-hero' },
+  { label: 'Home', testId: 'nav-home' },
   { label: 'About', testId: 'nav-about' },
   { label: 'Skills', testId: 'nav-skills' },
   { label: 'Projects', testId: 'nav-projects' },
   { label: 'Contact', testId: 'nav-contact' },
 ];
 const STICKY_NAV_HEIGHT = 80;
-// ******************************************************
-// REMOVE or significantly simplify the custom waitForScrollTo
-// if there is NO scroll animation.
-// ******************************************************
+
 
 // Helper function to check if an element is in the desired viewport range
 // This replaces the "wait for scroll" logic with "wait for position"
@@ -81,3 +78,18 @@ test.describe('Navbar scroll behavior', () => {
     });
   }
 });
+
+test.describe('Navbar URL shows section', () => {
+  for (const { label, testId } of navItems) {
+    test(`jumps to ${label} section`, async ({ page }) => {
+      await page.goto('/');
+      await page.click(`nav >> text=${label}`);
+
+      // Expect URL to contain the correct hash
+      const expectedFragment = testId.replace(/^nav-/, '');
+      await expect(page).toHaveURL(new RegExp(`#${expectedFragment}$`));
+    });
+  }
+});
+
+
