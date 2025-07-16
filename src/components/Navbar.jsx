@@ -54,6 +54,8 @@ export const Navbar = () => {
       }`}
       target={item.name === "Resume" ? "_blank" : "_self"}
       rel={item.name === "Resume" ? "noopener noreferrer" : undefined}
+      data-testid={`nav-${item.name.toLowerCase()}`} //adding test ids for  testability
+
     >
       {item.name}
     </a>
