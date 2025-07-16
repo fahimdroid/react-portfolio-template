@@ -93,3 +93,21 @@ test.describe('Navbar URL shows section', () => {
 });
 
 
+test('Resume link navigates to correct Google Drive URL', async ({ page, context }) => {
+  await page.goto('/');
+
+  // Intercept the new page (popup or tab)
+  const [newPage] = await Promise.all([
+    context.waitForEvent('page'),
+    page.getByTestId('nav-resume').click(), 
+  ]);
+
+  // Wait for navigation to finish
+  await newPage.waitForLoadState();
+
+  // Check the URL is a Google Drive link
+  const url = newPage.url();
+  expect(url).toMatch(/^https:\/\/drive\.google\.com\/.+/);
+
+
+});
