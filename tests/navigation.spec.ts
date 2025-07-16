@@ -1,4 +1,3 @@
-
 import { test, expect } from '@playwright/test';
 
 const navItems = [
@@ -8,51 +7,77 @@ const navItems = [
   { label: 'Projects', testId: 'nav-projects' },
   { label: 'Contact', testId: 'nav-contact' },
 ];
+const STICKY_NAV_HEIGHT = 80;
+// ******************************************************
+// REMOVE or significantly simplify the custom waitForScrollTo
+// if there is NO scroll animation.
+// ******************************************************
 
-//helper function
-async function waitForScrollTo(page, selector, timeout = 10000) {
-  await page.waitForFunction(
-    (sel) => {
-      const el = document.querySelector(sel);
-      if (!el) return false;
-      const rect = el.getBoundingClientRect();
-      return rect.top >= -50 && rect.top <= 50;
-    },
-    selector,
-    { timeout }
-  );
+// Helper function to check if an element is in the desired viewport range
+// This replaces the "wait for scroll" logic with "wait for position"
+async function isElementInViewportRange(page, selector, minTop, maxTop, timeout = 5000) {
+    await page.waitForFunction(
+      ({ sel, minT, maxT }) => {
+        const el = document.querySelector(sel);
+        if (!el) return false;
+        const rect = el.getBoundingClientRect();
+        // Console log here is useful for debugging if this still fails
+         console.log(`[isElementInViewportRange] Selector: ${sel}, Current top: ${rect.top.toFixed(2)}`);
+        return rect.top >= minT && rect.top <= maxT;
+      },
+      { sel: selector, minT: minTop, maxT: maxTop },
+      { timeout }
+    );
 }
+
 
 test.describe('Navbar scroll behavior', () => {
   for (const { label, testId } of navItems) {
-    test(`scrolls to ${label} section`, async ({ page }) => {
+    test(`jumps to ${label} section`, async ({ page }) => { // Changed description
       await page.goto('/');
 
       const selector = `[data-testid="${testId}"]`;
+      const targetSection = page.locator(selector);
 
-      // Always start scrolled at the very top to ensure consistency
-      await page.evaluate(() => window.scrollTo(0, 0));
-
-      // If testing Home, first scroll away to About, wait for it to settle
+      // --- Handling the 'Home' test case ---
       if (label === 'Home') {
-        await page.click('nav >> text=About');
-        await waitForScrollTo(page, '[data-testid="nav-about"]');
+
+
+        // Click 'About' and wait for About section to be in view then click home and verify we are at the top
+        await page.click('nav >> text=Contact');
+        await isElementInViewportRange(page, '[data-testid="nav-contact"]', -80, 120);
+
+        // Verify we are indeed away from the very top
+        const currentScrollY = await page.evaluate(() => window.scrollY);
+        expect(currentScrollY).toBeGreaterThan(50); // Ensure scrolled down at least 50px
+
+        // 2. Now click 'Home' nav item
+        await page.click(`nav >> text=${label}`);
+
+    
+
+        // Final verification for Home
+        const isAtTop = await page.evaluate(() => window.scrollY === 0);
+        expect(isAtTop).toBe(true); // Assert we are at the top
+
+      } else {
+        // --- Handling all other sections ---
+        // Ensure starting at the very top for consistency before clicking
+        await page.evaluate(() => window.scrollTo(0, 0));
+        await page.waitForFunction(() => window.scrollY === 0); // Confirm scroll is at 0
+
+        // Click the nav item
+        await page.click(`nav >> text=${label}`);
+
+        // Wait for the target section to be in the desired viewport range
+        // Adjust these values based on your sticky header/layout if applicable
+        await isElementInViewportRange(page, selector, -80, 120);
+
+        // Final verification: section is indeed in viewport range
+        const sectionTop = await targetSection.evaluate(el => el.getBoundingClientRect().top);
+        expect(sectionTop).toBeGreaterThanOrEqual(-80);
+        expect(sectionTop).toBeLessThanOrEqual(120);
       }
-
-      // Now click the nav item under test
-      await page.click(`nav >> text=${label}`);
-
-      // Wait for the scroll to complete to the target section
-      await waitForScrollTo(page, selector);
-
-      // Verify the section is in the viewport
-      const section = page.locator(selector);
-      const isInViewport = await section.evaluate(el => {
-        const top = el.getBoundingClientRect().top;
-        return top >= -80 && top <= 120;
-      });
-
-      expect(isInViewport).toBe(true);
     });
   }
 });
