@@ -3,32 +3,32 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Visual Diff Framework",
+    description: "A simple tool to visually compare visual differences between production and staging environments.",
+    image: "/projects/project3.png",
+    tags: ["Javascript", "Backstop", "Regression Testing"],
+    demoUrl: "https://github.com/AddyAlago/VisualDiffSuite",
+    githubUrl: "https://github.com/AddyAlago/VisualDiffSuite",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Grid News Cypress Framework",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
+      "Behavior driven Cypress testing framework for Grid News launch",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["Cypress", "Typescript", "Startup Launch"],
+    demoUrl: "https://github.com/AddyAlago/CypressIntegration",
+    githubUrl: "https://github.com/AddyAlago/CypressIntegration",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Lighthouse server",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "Fully automated Lighthouse server for performance testing and reporting on each new buils.",
+    image: "/projects/project4.png",
+    tags: ["Google Lighthouse", "Typescript", "Accessibility"],
+    demoUrl: "https://github.com/AddyAlago/lhci",
+    githubUrl: "https://github.com/AddyAlago/lhci",
   },
 ];
 
@@ -100,7 +100,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/AddyAlago"
           >
             Check My Github <ArrowRight size={16} />
           </a>
