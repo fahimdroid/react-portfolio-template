@@ -1,13 +1,7 @@
-import {
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-  Twitch,
-  Twitter,
-} from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { SiLinkedin, SiInstagram, SiTwitch } from "react-icons/si";
+import { FaSquareXTwitter } from "react-icons/fa6";
+
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
@@ -94,16 +88,16 @@ export const ContactSection = () => {
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
                 <a href="#" target="_blank">
-                  <Linkedin />
+                  <SiLinkedin />
                 </a>
                 <a href="#" target="_blank">
-                  <Twitter />
+                  <FaSquareXTwitter />
                 </a>
                 <a href="#" target="_blank">
-                  <Instagram />
+                  <SiInstagram />
                 </a>
                 <a href="#" target="_blank">
-                  <Twitch />
+                  <SiTwitch />
                 </a>
               </div>
             </div>
