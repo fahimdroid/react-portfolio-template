@@ -16,11 +16,11 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              With 6 years of hands-on experience in WordPress design and development, I specialize in creating custom, responsive, and user-friendly websites that deliver real business results. From business sites to eCommerce stores, I craft solutions that are both visually appealing and technically strong.
+             With 6 years of experience in WordPress, I design and develop responsive, user-friendly websites that drive real business results. From corporate sites to eCommerce stores, I deliver solutions that are both visually appealing and technically solid.
             </p>
 
             <p className="text-muted-foreground">
-              I’m passionate about building websites that are not only beautiful but also optimized for performance, SEO, and scalability. I continuously learn and adapt to the latest WordPress trends, plugins, and technologies to provide modern, future-ready solutions for my clients.
+              Passionate about performance, SEO, and scalability, I stay updated with the latest WordPress tools and trends to build modern, future-ready websites.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
