@@ -12,20 +12,15 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Web Developer & Tech Creator
+              Passionate WordPress Designer & Developer
             </h3>
 
             <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
+              With 6 years of hands-on experience in WordPress design and development, I specialize in creating custom, responsive, and user-friendly websites that deliver real business results. From business sites to eCommerce stores, I craft solutions that are both visually appealing and technically strong.
             </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
+              I’m passionate about building websites that are not only beautiful but also optimized for performance, SEO, and scalability. I continuously learn and adapt to the latest WordPress trends, plugins, and technologies to provide modern, future-ready solutions for my clients.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -50,10 +45,9 @@ export const AboutSection = () => {
                   <Code className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Web Development</h4>
+                  <h4 className="font-semibold text-lg"> WordPress Development</h4>
                   <p className="text-muted-foreground">
-                    Creating responsive websites and web applications with
-                    modern frameworks.
+                    Customization expert in Elementor, Divi, and WPBakery, building responsive and modern websites tailored for businesses.
                   </p>
                 </div>
               </div>
@@ -64,10 +58,9 @@ export const AboutSection = () => {
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
+                  <h4 className="font-semibold text-lg">Corporate & Business Websites</h4>
                   <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
+                    Designing professional websites that reflect brand identity, showcase services, and drive growth.
                   </p>
                 </div>
               </div>
@@ -79,10 +72,9 @@ export const AboutSection = () => {
                 </div>
 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
+                  <h4 className="font-semibold text-lg">eCommerce Solutions</h4>
                   <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile
-                    methodologies.
+                    Creating high-converting WooCommerce stores with smooth navigation, secure checkout, and user-friendly layouts.
                   </p>
                 </div>
               </div>
